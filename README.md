@@ -3,11 +3,11 @@
 This example showcases how to configure FXLauncher in your Maven application to provide
 automatic updates optionally in combination with native installers.
 
-Please see [pom.xml](/pom.xml "pom.xml deployment descriptor") for complete documentation.
+Please see [pom.xml](/pom.xml) for complete documentation.
 
 ## Operations
 
-This project can perform the following operations:
+The following operations are supported by the example:
 
 1. Compile project jar to app.dir
 2. Copy dependencies to app.dir
@@ -17,7 +17,7 @@ This project can perform the following operations:
 
 ### Maven targets
  
-#### Generate the application into ${app.dir}:
+#### Generate the application
 
 	mvn clean package
 	
@@ -31,7 +31,7 @@ This project can perform the following operations:
 
 ### Configuration
 
-Include the `build` section of the deployment descriptor and customize the following properties:
+Copy the deployment descriptor and customize the following properties:
 
 ```xml
 <properties>
