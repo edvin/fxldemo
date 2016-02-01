@@ -1,6 +1,6 @@
 # Sample Application for FXLauncher
 
-This small example application showcasing how to configure FXLauncher in your Maven application to provide
+This example showcases how to configure FXLauncher in your Maven application to provide
 automatic updates optionally in combination with native installers.
 
 Please see [pom.xml](/pom.xml "pom.xml deployment descriptor") for complete documentation.
