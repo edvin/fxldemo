@@ -1,4 +1,4 @@
-# Sample Application for FXLauncher
+# QuickStart Demo Application for FXLauncher
 
 This example showcases how to configure FXLauncher in your Maven application to provide
 automatic updates optionally in combination with native installers.
@@ -15,20 +15,6 @@ The following operations are supported by the example:
 4. Create native installer
 5. Upload artifacts to auto update repository
 
-### Maven targets
- 
-#### Generate the application
-
-	mvn clean package
-	
-#### Deploy the application artifacts to your webserver
-	
-	mvn exec:exec@deploy-app
-	
-#### Build a native installer
-	
-	mvn exec:exec@installer
-
 ### Configuration
 
 Copy the deployment descriptor and customize the following properties:
@@ -39,7 +25,7 @@ Copy the deployment descriptor and customize the following properties:
 	<app.filename>${project.name}</app.filename>
 
 	<!-- The JavaFX Application class name -->
-	<app.mainClass>no.tornado.FxmlDemo</app.mainClass>
+	<app.mainClass>no.tornado.FxlDemo</app.mainClass>
 
 	<!-- The app and launcher will be assembled in this folder -->
 	<app.dir>${project.build.directory}/app</app.dir>
@@ -54,6 +40,20 @@ Copy the deployment descriptor and customize the following properties:
 	<app.deploy.target>w48839@fxldemo.tornado.no:fxldemo</app.deploy.target>
 </properties>
 ```
+
+### Maven targets
+ 
+#### Generate the application
+
+	mvn clean package
+	
+#### Deploy the application artifacts to your webserver
+	
+	mvn exec:exec@deploy-app
+	
+#### Build a native installer
+	
+	mvn exec:exec@installer
 
 ### Prebuilt installers
 

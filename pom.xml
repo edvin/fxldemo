@@ -6,7 +6,7 @@
 
     <groupId>no.tornado</groupId>
     <artifactId>fxldemo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0</version>
     <name>FxlDemo</name>
 
     <!--
@@ -30,11 +30,14 @@
     <!-- Everything you normally need to configure is done in this section -->
 
     <properties>
-        <!-- Application Name -->
-        <app.filename>${project.name}</app.filename>
+        <!-- Installer Filename without suffix -->
+        <app.filename>FxlDemo</app.filename>
 
         <!-- The JavaFX Application class name -->
-        <app.mainClass>no.tornado.FxmlDemo</app.mainClass>
+        <app.mainClass>no.tornado.FxlDemo</app.mainClass>
+
+        <!-- The Application version used by javapackager -->
+        <app.version>2.0</app.version>
 
         <!-- The app and launcher will be assembled in this folder -->
         <app.dir>${project.build.directory}/app</app.dir>
@@ -43,7 +46,7 @@
         <app.installerdir>${project.build.directory}/installer</app.installerdir>
 
         <!-- Base URL where you will host the application artifacts -->
-        <app.url>http://fxsamples.tornado.no/demo/</app.url>
+        <app.url>http://fxldemo.tornado.no/</app.url>
 
         <!-- Optional scp target for application artifacts hosted at the above url -->
         <app.deploy.target>w48839@fxldemo.tornado.no:fxldemo</app.deploy.target>
@@ -57,7 +60,7 @@
         2. Copy dependencies to app.dir
         3. Generate app.xml manifest
         4. Create native installer
-        5. Upload artifacts to auto update repository
+        5. Upload application artifacts
 
         Usage:
 
@@ -65,7 +68,7 @@
 
             mvn clean package
 
-            (You can now launch the app with java -jar fxlauncher.jar)
+            (You can now launch the app with java -jar fxlauncher.jar from target/app)
 
         Deploy the application artifacts via scp
 
@@ -77,7 +80,7 @@
 
             mvn exec:exec@installer
 
-            (Look in build/bundles for your native installer)
+            (Look in target/installer/bundles for your native installer)
     -->
     <build>
         <plugins>
@@ -129,7 +132,9 @@
                             </arguments>
                         </configuration>
                     </execution>
-                    <!-- Create native installer -->
+                    <!-- Create native installer. Feel free to add more arguments as needed.
+                     https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javapackager.html
+                     -->
                     <execution>
                         <id>installer</id>
                         <goals>
@@ -157,10 +162,11 @@
                                 <argument>${project.name}</argument>
                                 <argument>-title</argument>
                                 <argument>${project.name}</argument>
+                                <argument>-BappVersion=${app.version}</argument>
                             </arguments>
                         </configuration>
                     </execution>
-                    <!-- Copy deployed application to remote site using scp (optional) -->
+                    <!-- Copy application artifacts to remote site using scp (optional) -->
                     <execution>
                         <id>deploy-app</id>
                         <goals>
