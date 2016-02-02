@@ -58,7 +58,7 @@
 
         1. Compile project jar to app.dir
         2. Copy dependencies to app.dir
-        3. Generate app.xml manifest
+        3. Generate app.xml manifest and embed it into fxlauncher.jar
         4. Create native installer
         5. Upload application artifacts
 
@@ -74,7 +74,7 @@
 
             mvn exec:exec@deploy-app
 
-            (Auto update is now available. You can also run java -jar fxlauncher.jar http://app.url/app.xml)
+            (Auto update is now available. You can also run java -jar fxlauncher.jar)
 
         Build a native installer for the platform you are on (only needed once)
 
@@ -119,6 +119,7 @@
                 <!-- Generate app.xml manifest -->
                 <executions>
                     <execution>
+                        <id>create-manifest</id>
                         <phase>package</phase>
                         <goals>
                             <goal>java</goal>
@@ -129,6 +130,23 @@
                                 <argument>${app.url}</argument>
                                 <argument>${app.mainClass}</argument>
                                 <argument>${app.dir}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <!-- Embed app.xml inside fxlauncher.xml so we don't need to reference app.xml to start the app -->
+                    <execution>
+                        <id>embed-manifest-in-launcher</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>jar</executable>
+                            <workingDirectory>${app.dir}</workingDirectory>
+                            <arguments>
+                                <argument>uf</argument>
+                                <argument>fxlauncher.jar</argument>
+                                <argument>app.xml</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -154,8 +172,6 @@
                                 <argument>${app.dir}</argument>
                                 <argument>-srcfiles</argument>
                                 <argument>fxlauncher.jar</argument>
-                                <argument>-argument</argument>
-                                <argument>${app.url}/app.xml</argument>
                                 <argument>-appclass</argument>
                                 <argument>fxlauncher.Launcher</argument>
                                 <argument>-name</argument>

@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -35,6 +37,7 @@ public class FxlDemo extends Application {
 		root.setAlignment(Pos.CENTER);
 		root.setSpacing(20);
 		root.setPadding(new Insets(25));
+        root.setStyle("-fx-border-color: lightblue");
 
 		stage.setScene(new Scene(root));
 		stage.show();
