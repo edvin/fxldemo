@@ -1,7 +1,7 @@
 # QuickStart Demo Application for FXLauncher
 
-This example showcases how to configure FXLauncher in your Maven application to provide
-automatic updates optionally in combination with native installers.
+This example showcases how to configure [FXLauncher](https://github.com/edvin/fxlauncher) in your
+Maven application to provide automatic updates optionally in combination with native installers.
 
 Please see [pom.xml](/pom.xml) for complete documentation.
 
