@@ -36,6 +36,9 @@
         <!-- The JavaFX Application class name -->
         <app.mainClass>no.tornado.FxlDemo</app.mainClass>
 
+        <!-- The Application vendor used by javapackager -->
+        <app.vendor>Acme Inc</app.vendor>
+
         <!-- The Application version used by javapackager -->
         <app.version>2.0</app.version>
 
@@ -178,6 +181,8 @@
                                 <argument>${project.name}</argument>
                                 <argument>-title</argument>
                                 <argument>${project.name}</argument>
+                                <argument>-vendor</argument>
+                                <argument>${app.vendor}</argument>
                                 <argument>-BappVersion=${app.version}</argument>
                             </arguments>
                         </configuration>
