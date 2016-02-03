@@ -81,7 +81,7 @@
 
         Build a native installer for the platform you are on (only needed once)
 
-            mvn exec:exec@installer
+            mvn install
 
             (Look in target/installer/bundles for your native installer)
     -->
@@ -158,6 +158,7 @@
                      -->
                     <execution>
                         <id>installer</id>
+                        <phase>install</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>

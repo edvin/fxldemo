@@ -53,7 +53,7 @@ Copy the deployment descriptor and customize the following properties:
 	
 #### Build a native installer
 	
-	mvn exec:exec@installer
+	mvn install
 
 ### Prebuilt installers
 
