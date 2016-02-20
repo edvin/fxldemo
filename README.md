@@ -1,9 +1,12 @@
-# QuickStart Demo Application for FXLauncher
+# Maven QuickStart Demo Application for FXLauncher
 
 This example showcases how to configure [FXLauncher](https://github.com/edvin/fxlauncher) in your
 Maven application to provide automatic updates optionally in combination with native installers.
 
 Please see [pom.xml](/pom.xml) for complete documentation.
+
+**Note**: There is nothing Maven spesific about FXLauncher, and these operations should be easy to perform in any build system.
+	There is also a [Gradle version](https://github.com/edvin/fxldemo-gradle) of this project. 
 
 ## Operations
 
@@ -59,5 +62,3 @@ Copy the deployment descriptor and customize the following properties:
 
 See http://fxldemo.tornado.no for a prebuilt version of this application, including native installers
 for Windows, MacOSX and Linux.
-
-There is nothing Maven spesific about FXLauncher, and these operations should be easy to perform in any other build system.	
