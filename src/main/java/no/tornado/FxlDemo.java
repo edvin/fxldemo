@@ -29,6 +29,9 @@ public class FxlDemo extends Application {
 		// Alibi for including ControlsFX Dependency :)
 		SegmentedButton fxcontrol = new SegmentedButton(new ToggleButton("One"), new ToggleButton("Two"), new ToggleButton("Three"));
 
+        // Did we get any arguments?
+        getParameters().getNamed().forEach((name, value) -> System.out.println(String.format("%s=%s", name, value)));
+
 		Button exitButton = new Button("Exit");
 		exitButton.setStyle("-fx-font-weight: bold");
 		exitButton.setOnAction(event -> Platform.exit());
