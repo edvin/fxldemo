@@ -189,6 +189,7 @@
                                 <argument>-vendor</argument>
                                 <argument>${app.vendor}</argument>
                                 <argument>-BappVersion=${app.version}</argument>
+                                <argument>-Bidentifier=${project.groupId}.${project.artifactId}</argument>
                             </arguments>
                         </configuration>
                     </execution>
