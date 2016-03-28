@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.tornado</groupId>
             <artifactId>fxlauncher</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.9</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -182,6 +182,8 @@
                                 <argument>${project.name}</argument>
                                 <argument>-title</argument>
                                 <argument>${project.name}</argument>
+                                <argument>-identifier</argument>
+                                <argument>${project.groupId}.${project.artifactId}</argument>
                                 <argument>-vendor</argument>
                                 <argument>${app.vendor}</argument>
                                 <argument>-BappVersion=${app.version}</argument>
