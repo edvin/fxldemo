@@ -186,8 +186,6 @@
                                 <argument>${project.name}</argument>
                                 <argument>-title</argument>
                                 <argument>${project.name}</argument>
-                                <argument>-identifier</argument>
-                                <argument>${project.groupId}.${project.artifactId}</argument>
                                 <argument>-vendor</argument>
                                 <argument>${app.vendor}</argument>
                                 <argument>-BappVersion=${app.version}</argument>
