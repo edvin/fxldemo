@@ -36,6 +36,9 @@
         <!-- The JavaFX Application class name -->
         <app.mainClass>no.tornado.FxlDemo</app.mainClass>
 
+        <!-- Optional parameters to the application, will be embedded in the launcher and can be overriden on the command line -->
+        <app.parameters>--myOption=myValue --myOtherOption=myOtherValue</app.parameters>
+
         <!-- The Application vendor used by javapackager -->
         <app.vendor>Acme Inc</app.vendor>
 
@@ -133,6 +136,7 @@
                                 <argument>${app.url}</argument>
                                 <argument>${app.mainClass}</argument>
                                 <argument>${app.dir}</argument>
+                                <argument>${app.parameters}</argument>
                             </arguments>
                         </configuration>
                     </execution>
