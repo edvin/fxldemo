@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.tornado</groupId>
             <artifactId>fxlauncher</artifactId>
-            <version>1.0.9</version>
+            <version>1.0.10</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -35,6 +35,8 @@
 
         <!-- The JavaFX Application class name -->
         <app.mainClass>no.tornado.FxlDemo</app.mainClass>
+
+        <app.cacheDir>USERLIB/FxlDemo</app.cacheDir>
 
         <!-- Optional parameters to the application, will be embedded in the launcher and can be overriden on the command line -->
         <app.parameters>--myOption=myValue --myOtherOption=myOtherValue</app.parameters>
@@ -136,6 +138,7 @@
                                 <argument>${app.url}</argument>
                                 <argument>${app.mainClass}</argument>
                                 <argument>${app.dir}</argument>
+                                <argument>--cache-dir=${app.cacheDir}</argument>
                                 <argument>${app.parameters}</argument>
                             </arguments>
                         </configuration>
