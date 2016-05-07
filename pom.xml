@@ -139,6 +139,7 @@
                                 <argument>${app.url}</argument>
                                 <argument>${app.mainClass}</argument>
                                 <argument>${app.dir}</argument>
+                                <!-- Remove this line if you haven't specified app.cacheDir -->
                                 <argument>--cache-dir=${app.cacheDir}</argument>
                                 <argument>${app.parameters}</argument>
                             </arguments>
