@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.tornado</groupId>
             <artifactId>fxlauncher</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.13</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -165,6 +165,25 @@
                             </arguments>
                         </configuration>
                     </execution>
+                    <!-- Optional step to include custom UI, see https://github.com/edvin/fxlauncher-custom-ui -->
+                    <!--<execution>-->
+                        <!--<id>embed-custom-ui-in-launcher</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>exec</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<executable>jar</executable>-->
+                            <!--<workingDirectory>${app.dir}</workingDirectory>-->
+                            <!--<arguments>-->
+                                <!--<argument>uf</argument>-->
+                                <!--<argument>fxlauncher.jar</argument>-->
+                                <!--<argument>-C</argument>-->
+                                <!--<argument>${project.basedir}/../fxlauncher-custom-ui/target/classes</argument>-->
+                                <!--<argument>.</argument>-->
+                            <!--</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                     <!-- Create native installer. Feel free to add more arguments as needed.
                      https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javapackager.html
                      -->
