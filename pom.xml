@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.tornado</groupId>
             <artifactId>fxlauncher</artifactId>
-            <version>1.0.13</version>
+            <version>1.0.14</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -144,6 +144,7 @@
                                 <argument>${app.dir}</argument>
                                 <argument>--cache-dir=${app.cacheDir}</argument>
                                 <argument>--accept-downgrade=${app.acceptDowngrade}</argument>
+                                <argument>--include-extensions=jpg</argument>
                                 <argument>${app.parameters}</argument>
                             </arguments>
                         </configuration>
