@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.tornado</groupId>
             <artifactId>fxlauncher</artifactId>
-            <version>1.0.16</version>
+            <version>1.0.20</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
